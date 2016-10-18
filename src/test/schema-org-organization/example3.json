@@ -1,0 +1,16 @@
+﻿{
+  "$schema": "http://json.schemastore.org/schema-org-organization",
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "San Francisco 49ers",
+  "member": {
+    "@type": "OrganizationRole",
+    "member": {
+      "@type": "Person",
+      "name": "Joe Montana"
+    },
+    "startDate": "1979",
+    "endDate": "1992",
+    "roleName": "Quarterback"
+  }
+}

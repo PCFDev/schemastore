@@ -1,0 +1,338 @@
+﻿{
+  "title": "JSON schema for schema.org / Organization",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "This is a JSON schema representation of the schema.org Organization schema: https://schema.org/Organization",
+  "anyOf": [
+    {
+      "$ref": "http://json.schemastore.org/schema-org-thing"
+    }
+  ],
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "regex",
+      "pattern": "http://schema.org",
+      "description": "override the @context property to ensure the schema.org URI is used"
+    },
+    "@type": {
+      "type": "string",
+      "format": "regex",
+      "pattern": "Person",
+      "description": "override the @type property to ensure Person is used"
+    },
+    "address": {
+      "oneOf": [
+        {
+          "description": "PostalAddress",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "type": "string",
+          "description": "Physical address of the item."
+        }
+      ]
+    },
+    "aggregateRating": {
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item. (AggregateRating)",
+      "type": "object"
+    },
+    "alumni": {
+      "description": "Alumni of an organization.",
+      "type": "array",
+      "items": {
+        "description": "Person",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "areaServed": {
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": [
+        {
+          "description": "AdministrativeArea or GeoShape",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "$ref": "http://json.schemastore.org/schema-org-place"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "award": {
+      "description": "An award won by or for this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contactPoint": {
+      "description": "A contact point for a person or organization.",
+      "type": "array",
+      "items": {
+        "description": "ContactPoint",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "department": {
+      "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours).",
+      "type": "array",
+      "items": {
+        "description": "Organization",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "dissolutionDate": {
+      "description": "The date that this organization was dissolved.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "duns": {
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "type": "string"
+    },
+    "email": {
+      "description": "Email address.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "employee": {
+      "description": "Someone working for this organization.",
+      "type": "array",
+      "items": {
+        "description": "Person",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "event": {
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": {
+        "description": "Event",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "faxNumber": {
+      "description": "The fax number.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "founder": {
+      "description": "A person who founded this organization.",
+      "type": "array",
+      "items": {
+        "description": "Person",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "founding Date": {
+      "description": "The date that this organization was founded.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "foundingLocation": {
+      "description": "The place where the Organization was founded.",
+      "$ref": "http://json.schemastore.org/schema-org-place"
+    },
+    "funder": {
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "type": "array",
+      "items": [
+        {
+          "description": "Organization",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "description": "Person",
+          "type": "object"
+        }
+      ]
+    },
+    "globalLocationNumber": {
+      "description": "The Global Location Number (GLN), sometimes referred to as International Location Number (ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "string",
+      "format": "regex",
+      "pattern": "\\b\\d{13}\\b"
+    },
+    "hasOfferCatalog": {
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "$ref": "http://json.schemastore.org/schema-org-thing"
+    },
+    "hasPOS": {
+      "description": "Points-Of-Sales operated by thei organization or person.",
+      "type": "array",
+      "items": {
+        "$ref": "http://json.schemastore.org/schema-org-place"
+      }
+    },
+    "isicV4": {
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "type": "string"
+    },
+    "legalName": {
+      "description": "The official name of the organization.",
+      "type": "string"
+    },
+    "leiCode": {
+      "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": [
+        {
+          "$ref": "http://json.schemastore.org/schema-org-place"
+        },
+        {
+          "description": "PostalAddress",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "logo": {
+      "description": "An associated logo.",
+      "anyOf": [
+        {
+          "description": "ImageObject",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "description": "URL",
+          "type": "string",
+          "format": "uri"
+        }
+      ]
+    },
+    "makesOffer": {
+      "description": "A pointer to products or services offered by the organization or person (Offer).",
+      "title": "array",
+      "items": {
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "member": {
+      "description": "A member of an Organization or a ProgramMembership. Organizations can be members of Organizations; ProgramMembership is typically for individuals.",
+      "type": "array",
+      "items": [
+        {
+          "description": "Organization",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "description": "Person",
+          "type": "object"
+        }
+      ]
+    },
+    "memberOf": {
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+      "type": "array",
+      "items": [
+        {
+          "description": "Organization",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "description": "ProgramMembership",
+          "type": "object"
+        }
+      ]
+    },
+    "naics": {
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or person.",
+      "type": "string"
+    },
+    "numberOfEmployees": {
+      "description": "The number of employees in an organization (eg. business).",
+      "type": "string"
+    },
+    "owns": {
+      "description": "Products owned by the organization or person.",
+      "type": "array",
+      "items": [
+        {
+          "description": "Product",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "description": "OwnershipInfo",
+          "type": "object"
+        }
+      ]
+    },
+    "parentOrganization": {
+      "description": "The larger organization that this local business is a branch of, if any.",
+      "type": "array",
+      "items": {
+        "description": "Organization",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "review": {
+      "description": "A review of the item.",
+      "type": "array",
+      "items": {
+        "description": "Review",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "seeks": {
+      "description": "A pointer to products or services sought by the organization or person (Demand).",
+      "type": "array",
+      "items": {
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }      
+    },
+    "sponsor": {
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution.",
+      "type": "array",
+      "items": [
+        {
+          "description": "Person",
+          "$ref": "http://json.schemastore.org/schema-org-thing"
+        },
+        {
+          "description": "Organization",
+          "type": "object"
+        }
+      ]
+    },
+    "subOrganization": {
+      "description": "A relationship between two organizations where the first includes the second.",
+      "type": "array",
+      "items": {
+        "description": "Organization",
+        "$ref": "http://json.schemastore.org/schema-org-thing"
+      }
+    },
+    "taxID": {
+      "description": "The Tax/Fiscal ID of the organization or person (eg. the TIN in the US or the CIF/NIF in Spain).",
+      "type": "string"
+    },
+    "telephone": {
+      "description": "The telephone number.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vatID": {
+      "description": "The Value-added Tax ID of the organization or person.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "@type"
+  ]
+}

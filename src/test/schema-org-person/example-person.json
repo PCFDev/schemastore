@@ -1,0 +1,7 @@
+﻿{
+  "$schema": "http://json.schemastore.org/schema-org-person",
+  "@context": "http://schema.org/thing",
+  "@type": "Person",
+  "name": "Example",
+  "description": "Basic test for schema-org-person."
+}

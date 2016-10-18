@@ -371,6 +371,16 @@
       "url": "http://json.schemastore.org/schema-org-contact-point"
     },
     {
+      "name": "schema.org - Organization",
+      "description": "JSON Schema for Organization as defined by schema.org",
+      "url": "http://json.schemastore.org/schema-org-organization"
+    },
+    {
+      "name": "schema.org - Person",
+      "description": "JSON Schema for Person as defined by schema.org",
+      "url": "http://json.schemastore.org/schema-org-person"
+    },
+    {
       "name": "schema.org - Place",
       "description": "JSON Schema for Place as defined by schema.org",
       "url": "http://json.schemastore.org/schema-org-place"
